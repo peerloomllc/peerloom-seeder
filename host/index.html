@@ -84,6 +84,7 @@
   .toast.update { background: color-mix(in srgb, var(--accent, var(--good)) 12%, var(--surface)); border: 1px solid color-mix(in srgb, var(--accent, var(--good)) 40%, var(--border)); }
   .toast.update a { color: inherit; font-size: 13px; white-space: nowrap; }
   .toast.update code { font-size: 12.5px; }
+  .hint code { overflow-wrap: anywhere; }
 
   .main { flex: 1 1 auto; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; padding-bottom: 4px; }
   .stats { flex: 0 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
@@ -262,7 +263,7 @@
 <div class="overlay solid" id="login" hidden><form class="modal narrow" id="login-form">
   <div class="login-brand"><div class="brand-mark" data-pear></div><div class="brand-name">PeerLoom Seeder</div></div>
   <div class="stack">
-    <p class="hint">On Umbrel the password is shown next to PeerLoom Seeder in your apps. Elsewhere it was shown when the seeder was installed, and is in its data folder.</p>
+    <p class="hint">On Umbrel the password is shown next to PeerLoom Seeder in your apps, and on Start9 under its Show password action. Elsewhere it is in a file named <code>dashboard-password</code> in the seeder's data folder: <code>~/.local/share/peerloom-seeder</code> on Linux, <code>~/Library/Application Support/PeerLoom Seeder</code> on a Mac and <code>C:\ProgramData\PeerLoom Seeder</code> on Windows. To change it, edit that file and restart the seeder.</p>
     <div class="field"><input id="password" type="password" autocomplete="current-password" placeholder="Password" aria-label="Password"></div>
     <button class="primary" id="unlock" type="submit" style="width:100%">Unlock</button>
     <p class="flash err" id="login-error" hidden></p>
